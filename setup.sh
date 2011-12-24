@@ -12,7 +12,7 @@ rake extconf.rb
 popd
 
 # ctags
-sudo apt-get install ctags 
+sudo apt-get install exuberant-ctags
 
 # pyflakes
 # see issue: https://github.com/kevinw/pyflakes-vim/issues/27
