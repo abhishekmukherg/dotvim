@@ -62,6 +62,12 @@ Bundle 'leshill/vim-json'
 " Libraries
 Bundle 'L9'
 Bundle 'tpope/vim-repeat'
+" Ctags
+Bundle "majutsushi/tagbar"
+" Colors
+Bundle "altercation/vim-colors-solarized"
+
+
 
 filetype plugin indent on  " Automatically detect file types. (must turn on after Vundle)
 
@@ -216,8 +222,8 @@ imap <C-l> <C-x><C-l>
 " Leader
 " ---------------
 
-" Set leader to ,
-let mapleader=","
+" Set leader to \
+let mapleader="\"
 
 nmap <silent> <leader>s :set spell!<CR>
 nmap <silent> <leader>v :e ~/.vim/vimrc<CR>
@@ -422,6 +428,21 @@ nmap <Leader>t, :Tabularize /,\zs<CR>
 vmap <Leader>t, :Tabularize /,\zs<CR>
 nmap <Leader>t> :Tabularize /=>\zs<CR>
 vmap <Leader>t> :Tabularize /=>\zs<CR>
+
+" ---------------
+" Tagbar
+" ---------------
+let g:tagbar_usearrows = 1
+nnoremap <leader>l :TagbarToggle<CR>
+
+" ---------------
+" Solarized
+" ---------------
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
+
 
 " ---------------
 " Vundle
