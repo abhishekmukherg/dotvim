@@ -89,6 +89,6 @@ let g:pymode_syntax = 1
 
 " javacomplete
 if has ("autocmd")
-  autocmd Filetype java setlocal omnifunc=javacomoplete#Complete
+  autocmd Filetype java setlocal omnifunc=javacomplete#Complete
 endif
 
