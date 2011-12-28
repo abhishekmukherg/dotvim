@@ -183,3 +183,7 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 " save when focus lost
 au FocusLost * :wa
 
+" use semicolon for commands
+" http://vim.wikia.com/wiki/Map_semicolon_to_colon
+map ; :
+noremap ;; ;
