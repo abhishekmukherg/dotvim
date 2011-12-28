@@ -187,3 +187,14 @@ au FocusLost * :wa
 " http://vim.wikia.com/wiki/Map_semicolon_to_colon
 map ; :
 noremap ;; ;
+
+" after using '.', go to the character we were before 
+" http://vim.wikia.com/wiki/VimTip1142
+function! ResDot(count)
+    execute "normal!" count . "."
+    if line("'[") <= line("$")
+        normal! g`[
+    endif
+endfunction
+
+nnoremap <silent> . :<C-U>call ResDot(v:count1)<CR>
