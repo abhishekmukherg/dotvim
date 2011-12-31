@@ -77,6 +77,7 @@ Bundle 'javacomplete'
 Bundle 'skammer/vim-css-color'
 Bundle 'vim-scripts/Better-CSS-Syntax-for-Vim'
 
+" Let plugins work for their filetypes
 filetype plugin indent on " required!
 
 
@@ -131,33 +132,26 @@ vnoremap / /\v
 set termencoding=utf-8
 set encoding=utf-8
 
-set history=1000                " remember more commands and search history
-set undolevels=1000             " use many muchos levels of undo
+set history=1000                         " remember more commands and search history
+set undolevels=1000                      " use many muchos levels of undo
 if v:version >= 730
-    set undofile                " keep a persistent backup file
-    set undodir=~/.vim/.undo,~/tmp,/tmp
+set undofile                             " keep a persistent backup file
+set undodir=~/.vim/.undo,~/tmp,/tmp
 endif
-set nobackup                    " do not keep backup files, it's 70's style cluttering
-set noswapfile                  " do not write annoying intermediate swap files,
-                                "    who did ever restore from swap files anyway?
-set directory=~/.vim/.tmp,~/tmp,/tmp
-                                " store swap files in one of these directories
-                                "    (in case swapfile is ever turned on)
+set directory=~/.vim/.swap,~/tmp,/tmp    " store swap files in one of these directories
+set backupdir=~/.vim/.backup,~/tmp,/tmp  " store swap files in one of these directories
 
-set wildmenu                    " make tab completion for files/buffers act like bash
-set wildmode=list:full          " show a list when pressing tab and complete
-                                "    first full match
+set wildmenu                             " make tab completion for files/buffers act like bash
+set wildmode=list:full                   " show a list when pressing tab and complete
+                                         "   first full match
 set wildignore=*.swp,*.bak,*.pyc,*.class
-set title                       " change the terminal's title
-set visualbell                  " don't beep
-set noerrorbells                " don't beep
-set showcmd                     " show (partial) command in the last line of the screen
-                                "    this also shows visual selection info
-set nomodeline                  " disable mode lines (security measure)
-"set ttyfast                     " always use a fast terminal
-set cursorline                  " underline the current line, for quick orientation
-
-nnoremap ; :
+set title                                " change the terminal's title
+set visualbell                           " don't beep
+set noerrorbells                         " don't beep
+set showcmd                              " show (partial) command in the last line of the screen
+                                         " this also shows visual selection info
+set nomodeline                           " disable mode lines (security measure)
+set cursorline                           " underline the current line, for quick orientation
 
 " Swap implementations of ` and ' jump to markers
 " By default, ' jumps to the marked line, ` jumps to the marked line and
@@ -170,7 +164,7 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-nnoremap <leader>w <C-w>v<C-w>l " what does htis do ?
+nnoremap <leader>w <C-w>v<C-w>l
 
 " Complete whole filenames/lines with a quicker shortcut key in insert mode
 imap <C-f> <C-x><C-f>
