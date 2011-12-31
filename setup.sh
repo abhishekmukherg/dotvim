@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# get vundle going
+git submodule init
+git submodule update
+
+# Setup directories
+mkdir .swap
+mkdir .backup
+mkdir .undo
+
 # Ack.vim
 sudo apt-get install ack-grep
 sudo ln -sib /usr/bin/ack-grep /usr/bin/ack
