@@ -182,7 +182,6 @@ au FocusLost * :wa
 " use semicolon for commands
 " http://vim.wikia.com/wiki/Map_semicolon_to_colon
 map ; :
-noremap ;; ;
 
 " after using '.', go to the character we were before 
 " http://vim.wikia.com/wiki/VimTip1142
