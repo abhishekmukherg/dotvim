@@ -70,6 +70,7 @@ Bundle 'fs111/pydoc.vim'
 Bundle 'klen/python-mode'
 
 " Java
+" see http://www.vim.org/scripts/script.php?script_id=1785
 Bundle 'javacomplete'
 
 " Css
@@ -89,6 +90,7 @@ let g:pymode_syntax = 1
 
 " javacomplete
 if has ("autocmd")
+  " Could also use CompleteParamsInfo
   autocmd Filetype java setlocal omnifunc=javacomplete#Complete
 endif
 
