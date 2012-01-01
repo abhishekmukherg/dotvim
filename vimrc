@@ -59,6 +59,9 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'scottymoon/vim-twilight'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'godlygeek/csapprox'
+Bundle 'mattsa/vim-eddie'
+Bundle 'tomasr/molokai'
+Bundle 'therubymug/vim-pyte'
 
 " Syntax
 Bundle 'scrooloose/syntastic'
@@ -79,7 +82,6 @@ Bundle 'vim-scripts/Better-CSS-Syntax-for-Vim'
 
 " Let plugins work for their filetypes
 filetype plugin indent on " required!
-
 
 " Color setup
 set background=dark
@@ -135,8 +137,8 @@ set encoding=utf-8
 set history=1000                         " remember more commands and search history
 set undolevels=1000                      " use many muchos levels of undo
 if v:version >= 730
-set undofile                             " keep a persistent backup file
-set undodir=~/.vim/.undo,~/tmp,/tmp
+  set undofile                           " keep a persistent backup file
+  set undodir=~/.vim/.undo,~/tmp,/tmp
 endif
 set directory=~/.vim/.swap,~/tmp,/tmp    " store swap files in one of these directories
 set backupdir=~/.vim/.backup,~/tmp,/tmp  " store swap files in one of these directories
@@ -193,3 +195,7 @@ function! ResDot(count)
 endfunction
 
 nnoremap <silent> . :<C-U>call ResDot(v:count1)<CR>
+
+" Easier movement up and down
+nnoremap H <C-D>
+nnoremap L <C-U>
