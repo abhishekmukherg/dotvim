@@ -246,7 +246,5 @@ cnoremap %% %:p:h
 " -----------------------------------------------------------------------------
 
 " javacomplete
-if has ("autocmd")
-  " Could also use CompleteParamsInfo
-  autocmd Filetype java setlocal omnifunc=javacomplete#Complete
-endif
+" Could also use CompleteParamsInfo
+autocmd Filetype java setlocal omnifunc=javacomplete#Complete
