@@ -128,6 +128,7 @@ set fileformats="unix,dos,mac"
 
 " Make vim use regular regexps
 " @see http://stevelosh.com/blog/2010/09/coming-home-to-vim
+" @see :help \v
 nnoremap / /\v
 vnoremap / /\v
 cnoremap s/ s/\v
