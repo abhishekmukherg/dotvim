@@ -166,7 +166,7 @@ set wildmode=list:full                   " show a list when pressing tab and com
                                          " first full match
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title                                " change the terminal's title
-set visualbell                           " don't beep
+set novisualbell                         " don't blink
 set noerrorbells                         " don't beep
 set showcmd                              " show (partial) command in the last line of the screen
                                          " this also shows visual selection info
@@ -233,6 +233,10 @@ nnoremap <Esc> <Esc>:noh<CR>
 " Quit fast
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>w :wq<CR>
+
+" Delete buffer
+nnoremap <Leader>d :bd<CR>
+
 
 " -----------------------------------------------------------------------------
 " Auto/omni complete settings
