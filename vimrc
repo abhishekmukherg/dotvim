@@ -154,10 +154,12 @@ set encoding=utf-8
 
 set history=1000                         " remember more commands and search history
 set undolevels=1000                      " use many muchos levels of undo
+
 if v:version >= 730
-set undofile                             " keep a persistent backup file
-set undodir=~/.vim/.undo,~/tmp,/tmp
+  set undofile                           " keep a persistent backup file
+  set undodir=~/.vim/.undo,~/tmp,/tmp
 endif
+
 set directory=~/.vim/.swap,~/tmp,/tmp    " store swap files in one of these directories
 set backupdir=~/.vim/.backup,~/tmp,/tmp  " store swap files in one of these directories
 
