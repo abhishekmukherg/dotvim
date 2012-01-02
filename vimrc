@@ -208,3 +208,6 @@ nnoremap <Leader>z :ZoomWin<CR>
 
 " Turn off highlight with escape
 nnoremap <Esc> <Esc>:noh<CR>
+
+" Quit fast
+nnoremap <Leader>q :q<CR>
