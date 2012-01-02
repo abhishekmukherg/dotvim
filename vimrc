@@ -268,6 +268,13 @@ cnoremap %% %:p:h
 autocmd Filetype java setlocal omnifunc=javacomplete#Complete
 
 " -----------------------------------------------------------------------------
+" Language specific settings
+" -----------------------------------------------------------------------------
+
+" 2 spaces for tab in vim script
+autocmd FileType vim setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+" -----------------------------------------------------------------------------
 " Custom magic goes here
 " -----------------------------------------------------------------------------
 
