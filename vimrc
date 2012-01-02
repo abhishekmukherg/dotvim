@@ -222,6 +222,9 @@ if has('gui_running')
   set guioptions-=L
   set guioptions-=b
   set guioptions-=F
+
+  " Auto resize windows when vim resized
+  autocmd VimResized * wincmd =
 endif
 
 " -----------------------------------------------------------------------------
