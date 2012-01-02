@@ -95,7 +95,7 @@ Bundle 'skammer/vim-css-color'
 Bundle 'vim-scripts/Better-CSS-Syntax-for-Vim'
 
 " -----------------------------------------------------------------------------
-" Plugin Setup / Shortcuts
+" Plugin Setup / Shortcuts / Maps
 " -----------------------------------------------------------------------------
 
 " python-mode
@@ -110,7 +110,7 @@ vnoremap <Leader>= :Align
 nnoremap <Leader>z :ZoomWin<CR>
 
 " Run Ack fast
-nnoremap <leader>a :Ack<Space>
+nnoremap <Leader>a :Ack<Space>
 
 " -----------------------------------------------------------------------------
 " General setup
@@ -209,7 +209,7 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 au FocusLost * :wa
 
 " -----------------------------------------------------------------------------
-" Shortcuts and mappings
+" General Shortcuts and mappings
 " -----------------------------------------------------------------------------
 
 " Easy window navigation
