@@ -199,3 +199,9 @@ nnoremap <silent> . :<C-U>call ResDot(v:count1)<CR>
 " Easier movement up and down
 nnoremap H <C-D>
 nnoremap L <C-U>
+
+" Shortcut to ZoomWin
+nnoremap <Leader>z :ZoomWin<CR>
+
+" Turn off highlight with escape
+nnoremap <Esc> <Esc>:noh<CR>
