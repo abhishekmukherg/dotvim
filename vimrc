@@ -32,7 +32,6 @@ Bundle 'vim-scripts/L9'
 Bundle 'wycats/nerdtree'
 Bundle 'majutsushi/tagbar'
 Bundle 'dickeytk/status.vim'
-Bundle 'fholgado/minibufexpl.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 
 " Utilities
@@ -267,3 +266,33 @@ cnoremap %% %:p:h
 " javacomplete
 " Could also use CompleteParamsInfo
 autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+
+" -----------------------------------------------------------------------------
+" Custom magic goes here
+" -----------------------------------------------------------------------------
+
+let g:centerinscreen_active = 0
+
+function! ToggleCenterInScreen(desired_width)
+    if g:centerinscreen_active == 0
+        let a:window_width = winwidth(winnr())
+        let a:sidepanel_width = (a:window_width - a:desired_width) / 2
+
+        exec("silent leftabove " . a:sidepanel_width . "vsplit new")
+        wincmd l
+        exec("silent rightbelow " . a:sidepanel_width . "vsplit new")
+        wincmd h
+        let g:centerinscreen_active = 1
+    else
+        wincmd h
+        close
+        wincmd l
+        close
+        
+        let g:centerinscreen_active = 0
+    endif
+endfunction
+
+nnoremap <Leader>r :exec ToggleCenterInScreen(100)<CR>
+
+
