@@ -175,7 +175,7 @@ set cursorline                           " underline the current line, for quick
 
 """ Search and Movement """
 
-" Make vim use regular regexps
+" Make vim use regular regexps (very magic)
 " @see http://stevelosh.com/blog/2010/09/coming-home-to-vim
 " @see :help \v
 nnoremap / /\v
@@ -236,6 +236,9 @@ nnoremap <Leader>w :wq<CR>
 
 " Delete buffer
 nnoremap <Leader>d :bd<CR>
+
+" %% expands to dir of current file
+cnoremap %% %:p:h
 
 
 " -----------------------------------------------------------------------------
