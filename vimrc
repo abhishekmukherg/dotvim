@@ -41,7 +41,6 @@ Bundle 'tsaleh/vim-align'
 Bundle 'wincent/Command-T'
 Bundle 'vim-scripts/FuzzyFinder'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'godlygeek/tabular'
 
 " Manipulation
 Bundle 'michaeljsmith/vim-indent-object'
@@ -50,13 +49,11 @@ Bundle 'tpope/vim-repeat'
 Bundle 'scrooloose/nerdcommenter'
 
 " Code completion
-Bundle 'ervandew/supertab'
 Bundle 'Raimondi/delimitMate'
 Bundle 'docunext/closetag.vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'scrooloose/snipmate-snippets'
 Bundle 'mattn/zencoding-vim'
-Bundle 'ervandew/supertab'
 
 " Source Control
 Bundle 'tpope/vim-fugitive'
@@ -203,7 +200,7 @@ function! ResDot(count)
     endif
 endfunction
 
-nnoremap <silent> . :<C-U>call ResDot(v:count1)<CR>
+" nnoremap <silent> . :<C-U>call ResDot(v:count1)<CR>
 
 """ Utility """
 
@@ -212,6 +209,20 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 
 " save when focus lost
 au FocusLost * :wa
+
+""" Gvim specific """
+if has('gui_running')
+  " Not sure which of these are totally necessary
+  " but I want to get rid of as much as possible.
+  set guioptions-=m
+  set guioptions-=M
+  set guioptions-=T
+  set guioptions-=r
+  set guioptions-=l
+  set guioptions-=L
+  set guioptions-=b
+  set guioptions-=F
+endif
 
 " -----------------------------------------------------------------------------
 " General Shortcuts and mappings
@@ -232,8 +243,9 @@ map ; :
 nnoremap H <C-D>
 nnoremap L <C-U>
 
-" Turn off highlight with escape
-nnoremap <Esc> <Esc>:noh<CR>
+" Turn off highlight with space and clear messages
+" @see http://vim.wikia.com/wiki/Highlight_all_search_pattern_matches
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Quit fast
 nnoremap <Leader>q :q<CR>
@@ -244,7 +256,6 @@ nnoremap <Leader>d :bd<CR>
 
 " %% expands to dir of current file
 cnoremap %% %:p:h
-
 
 " -----------------------------------------------------------------------------
 " Auto/omni complete settings
