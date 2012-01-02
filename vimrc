@@ -130,6 +130,8 @@ set fileformats="unix,dos,mac"
 " @see http://stevelosh.com/blog/2010/09/coming-home-to-vim
 nnoremap / /\v
 vnoremap / /\v
+cnoremap s/ s/\v
+cnoremap g/ g/\v
 
 set termencoding=utf-8
 set encoding=utf-8
