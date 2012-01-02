@@ -112,6 +112,9 @@ nnoremap <Leader>z :ZoomWin<CR>
 " Run Ack fast
 nnoremap <Leader>a :Ack<Space>
 
+" toggle MiniBufExplorer
+nnoremap <Leader>m :TMiniBufExplorer<CR>
+
 " -----------------------------------------------------------------------------
 " General setup
 " -----------------------------------------------------------------------------
