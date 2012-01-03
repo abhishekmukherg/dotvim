@@ -62,6 +62,9 @@ Bundle 'gregsexton/gitv'
 " Window/buffer/tab manipulation
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'mutewinter/LustyJuggler'
+" also use 'mpage' but it doesnt have a repo,
+" included manually
+set rtp+=~/.vim/bundle/mpage/*
 
 " Colors
 Bundle 'altercation/vim-colors-solarized'
