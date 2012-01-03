@@ -209,6 +209,9 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 " save when focus lost
 au FocusLost * :wa
 
+" Auto resize windows when vim resized
+autocmd VimResized * wincmd =
+
 """ Gvim specific """
 if has('gui_running')
   " Not sure which of these are totally necessary
@@ -221,9 +224,6 @@ if has('gui_running')
   set guioptions-=L
   set guioptions-=b
   set guioptions-=F
-
-  " Auto resize windows when vim resized
-  autocmd VimResized * wincmd =
 endif
 
 " -----------------------------------------------------------------------------
