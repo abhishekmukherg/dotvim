@@ -45,3 +45,7 @@ style "vimfix" {
   bg[NORMAL] = "#242424" # Random dark color
 }
 widget "vim-main-window.*GtkForm" style "vimfix"' > ~/.gtkrc-2.0
+
+# Used for calling F11 from within vim to go fullscreen
+# since fullscreen support isnt built in
+sudo apt-get install xautomation
