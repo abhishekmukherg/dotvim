@@ -199,7 +199,13 @@ function! ResDot(count)
     endif
 endfunction
 
-" nnoremap <silent> . :<C-U>call ResDot(v:count1)<CR>
+nnoremap <silent> . :<C-U>call ResDot(v:count1)<CR>
+
+" Quickfix window with last search
+nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
+
+" Ack for the last search.
+nnoremap <silent> <leader>? :execute "Ack! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR>
 
 """ Utility """
 
@@ -211,6 +217,10 @@ au FocusLost * :wa
 
 " Auto resize windows when vim resized
 autocmd VimResized * wincmd =
+
+" Make D and Y behave
+nnoremap D d$
+nnoremap Y y$
 
 """ Gvim specific """
 if has('gui_running')
@@ -258,6 +268,9 @@ nnoremap <Leader>d :bd<CR>
 
 " %% expands to dir of current file
 cnoremap %% %:p:h
+
+" close the quickfix window
+nnoremap <Leader>cc :cclose<CR>
 
 " -----------------------------------------------------------------------------
 " Auto/omni complete settings
