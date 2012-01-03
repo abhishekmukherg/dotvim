@@ -295,11 +295,12 @@ function! ToggleCenterInScreen(desired_width)
     close
     wincmd l
     close
-    
+
     let g:centerinscreen_active = 0
   endif
 endfunction
 
 nnoremap <Leader>r :exec ToggleCenterInScreen(100)<CR>
+nnoremap <Leader>f :call system("xte 'key F11'")<CR>
 
 
