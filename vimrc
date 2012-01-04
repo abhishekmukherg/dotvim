@@ -92,6 +92,9 @@ Bundle 'javacomplete'
 Bundle 'skammer/vim-css-color'
 Bundle 'vim-scripts/Better-CSS-Syntax-for-Vim'
 
+" Velocity
+Bundle 'velocity.vim'
+
 " -----------------------------------------------------------------------------
 " Plugin Setup / Shortcuts / Maps
 " -----------------------------------------------------------------------------
@@ -109,9 +112,24 @@ nnoremap <Leader>z :ZoomWin<CR>
 
 " Run Ack fast
 nnoremap <Leader>a :Ack<Space>
+nnoremap <Leader>la :LAck<Space>
 
 " toggle MiniBufExplorer
 nnoremap <Leader>m :TMiniBufExplorer<CR>
+
+" toggle tagbar
+nnoremap <Leader>tg :TagbarToggle<CR>
+" generate ctags
+nnoremap <Leader>ct :silent! ctags -R --extra=+f
+
+" command-t
+let g:CommandTMaxFiles=20000
+let g:CommandTMaxHeight=15
+
+" fuzzy funder
+nnoremap <Leader>ff :FufFileWithCurrentBufferDir<CR>
+nnoremap <Leader>fb :FufBuffer<CR>
+nnoremap <Leader>ft :FufTaggedFile<CR>
 
 " -----------------------------------------------------------------------------
 " General setup
@@ -183,8 +201,6 @@ set cursorline                           " underline the current line, for quick
 " @see :help \v
 nnoremap / /\v
 vnoremap / /\v
-cnoremap s/ s/\v
-cnoremap g/ g/\v
 
 " Swap implementations of ` and ' jump to markers
 " By default, ' jumps to the marked line, ` jumps to the marked line and
@@ -242,6 +258,9 @@ endif
 " General Shortcuts and mappings
 " -----------------------------------------------------------------------------
 
+" close other buffers
+nnoremap <Leader>o :on<CR>
+
 " Easy window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -273,6 +292,11 @@ cnoremap %% %:p:h
 
 " close the quickfix window
 nnoremap <Leader>cc :cclose<CR>
+
+" location list stuff
+nnoremap <Leader>ll :ll<CR>
+nnoremap <Leader>j :lne<CR>
+nnoremap <Leader>k :lpre<CR>
 
 " -----------------------------------------------------------------------------
 " Auto/omni complete settings
@@ -320,9 +344,3 @@ endfunction
 
 nnoremap <Leader>r :exec ToggleCenterInScreen(100)<CR>
 nnoremap <Leader>f :call system("xte 'key F11'")<CR>
-
-" Huge mess of magic. In the future I'll try to understand this, but
-" basically it opens one file across many vsplits and syncs them so that
-" it's a continuous view of one file.
-" @see http://vim.wikia.com/wiki/View_text_file_in_two_columns
-nnoremap <silent> <leader>sb :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo vs<CR>Ljzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
