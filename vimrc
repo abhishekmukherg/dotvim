@@ -323,9 +323,3 @@ endfunction
 
 nnoremap <Leader>r :exec ToggleCenterInScreen(100)<CR>
 nnoremap <Leader>f :call system("xte 'key F11'")<CR>
-
-" Huge mess of magic. In the future I'll try to understand this, but
-" basically it opens one file across many vsplits and syncs them so that
-" it's a continuous view of one file.
-" @see http://vim.wikia.com/wiki/View_text_file_in_two_columns
-nnoremap <silent> <leader>sb :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo vs<CR>Ljzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
