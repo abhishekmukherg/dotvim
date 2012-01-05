@@ -32,7 +32,6 @@ Bundle 'vim-scripts/L9'
 Bundle 'wycats/nerdtree'
 Bundle 'majutsushi/tagbar'
 Bundle 'dickeytk/status.vim'
-Bundle 'nathanaelkane/vim-indent-guides'
 
 " Utilities
 Bundle 'mileszs/ack.vim'
