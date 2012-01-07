@@ -16,8 +16,8 @@ sudo ln -sib /usr/bin/ack-grep /usr/bin/ack
 # Command-T
 sudo apt-get install ruby rub-dev
 pushd
-cd bundle/command-t/ruby/command-t
-rake extconf.rb
+cd bundle/Command-T/ruby/command-t
+ruby extconf.rb
 popd
 
 # ctags
@@ -49,3 +49,6 @@ widget "vim-main-window.*GtkForm" style "vimfix"' > ~/.gtkrc-2.0
 # Used for calling F11 from within vim to go fullscreen
 # since fullscreen support isnt built in
 sudo apt-get install xautomation
+
+# Install pep8
+sudo apt-get install pep8

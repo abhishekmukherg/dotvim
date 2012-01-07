@@ -86,6 +86,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'kevinw/pyflakes-vim'
 Bundle 'fs111/pydoc.vim'
 Bundle 'klen/python-mode'
+Bundle 'nvie/vim-pep8'
 
 " Java
 " see http://www.vim.org/scripts/script.php?script_id=1785
@@ -97,6 +98,9 @@ Bundle 'vim-scripts/Better-CSS-Syntax-for-Vim'
 
 " Velocity
 Bundle 'velocity.vim'
+
+" Lisp
+Bundle 'vim-scripts/slimv.vim'
 
 " -----------------------------------------------------------------------------
 " Plugin Setup / Shortcuts / Maps
