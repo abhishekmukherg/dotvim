@@ -15,6 +15,9 @@ filetype plugin indent on " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" mandatory for some plugins
+set t_Co=256
+
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
@@ -32,6 +35,8 @@ Bundle 'vim-scripts/L9'
 Bundle 'wycats/nerdtree'
 Bundle 'majutsushi/tagbar'
 Bundle 'dickeytk/status.vim'
+" Bundle 'Lokaltog/vim-powerline'
+" Bundle 'molok/vim-smartusline'
 Bundle 'nathanaelkane/vim-indent-guides'
 
 " Utilities
@@ -137,6 +142,10 @@ let g:CommandTMaxHeight=15
 nnoremap <Leader>ff :FufFileWithCurrentBufferDir<CR>
 nnoremap <Leader>fb :FufBuffer<CR>
 nnoremap <Leader>ft :FufTaggedFile<CR>
+
+" status line
+" always show status bar
+set laststatus=2
 
 " -----------------------------------------------------------------------------
 " General setup
