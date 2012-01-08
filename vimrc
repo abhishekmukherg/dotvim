@@ -83,10 +83,10 @@ Bundle 'scrooloose/syntastic'
 """ Language Specific """
 
 " Python
-Bundle 'kevinw/pyflakes-vim'
-Bundle 'fs111/pydoc.vim'
+" Bundle 'kevinw/pyflakes-vim'
+" Bundle 'fs111/pydoc.vim'
 Bundle 'klen/python-mode'
-Bundle 'nvie/vim-pep8'
+" Bundle 'nvie/vim-pep8'
 
 " Java
 " see http://www.vim.org/scripts/script.php?script_id=1785
@@ -298,7 +298,7 @@ nnoremap <Leader>d :bd<CR>
 cnoremap %% %:p:h
 
 " close the quickfix window
-nnoremap <Leader>cc :cclose<CR>
+nnoremap <Leader>cl :cclose<CR>
 
 " location list stuff
 nnoremap <Leader>ll :ll<CR>
