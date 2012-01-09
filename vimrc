@@ -15,6 +15,9 @@ filetype plugin indent on " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" mandatory for some plugins
+set t_Co=256
+
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
@@ -49,8 +52,9 @@ Bundle 'scrooloose/nerdcommenter'
 " Code completion
 Bundle 'Raimondi/delimitMate'
 Bundle 'docunext/closetag.vim'
-Bundle 'msanders/snipmate.vim'
-Bundle 'scrooloose/snipmate-snippets'
+" Bundle 'msanders/snipmate.vim'
+" Bundle 'scrooloose/snipmate-snippets'
+Bundle 'vim-scripts/UltiSnips'
 Bundle 'mattn/zencoding-vim'
 
 " Source Control
@@ -61,6 +65,9 @@ Bundle 'gregsexton/gitv'
 " Window/buffer/tab manipulation
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'mutewinter/LustyJuggler'
+" also use 'mpage' but it doesnt have a repo,
+" included manually
+set rtp+=~/.vim/bundle/mpage/*
 
 " Colors
 Bundle 'altercation/vim-colors-solarized'
@@ -79,9 +86,10 @@ Bundle 'scrooloose/syntastic'
 """ Language Specific """
 
 " Python
-Bundle 'kevinw/pyflakes-vim'
-Bundle 'fs111/pydoc.vim'
+" Bundle 'kevinw/pyflakes-vim'
+" Bundle 'fs111/pydoc.vim'
 Bundle 'klen/python-mode'
+" Bundle 'nvie/vim-pep8'
 
 " Java
 " see http://www.vim.org/scripts/script.php?script_id=1785
@@ -93,6 +101,9 @@ Bundle 'vim-scripts/Better-CSS-Syntax-for-Vim'
 
 " Velocity
 Bundle 'velocity.vim'
+
+" Lisp
+Bundle 'vim-scripts/slimv.vim'
 
 " -----------------------------------------------------------------------------
 " Plugin Setup / Shortcuts / Maps
@@ -129,6 +140,15 @@ let g:CommandTMaxHeight=15
 nnoremap <Leader>ff :FufFileWithCurrentBufferDir<CR>
 nnoremap <Leader>fb :FufBuffer<CR>
 nnoremap <Leader>ft :FufTaggedFile<CR>
+
+" status line
+" always show status bar
+set laststatus=2
+
+" ultisnips                                 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " -----------------------------------------------------------------------------
 " General setup
@@ -207,22 +227,8 @@ vnoremap / /\v
 nnoremap ' `
 nnoremap ` '
 
-" after using '.', go to the character we were before 
-" http://vim.wikia.com/wiki/VimTip1142
-function! ResDot(count)
-    execute "normal!" count . "."
-    if line("'[") <= line("$")
-        normal! g`[
-    endif
-endfunction
-
-nnoremap <silent> . :<C-U>call ResDot(v:count1)<CR>
-
 " Quickfix window with last search
 nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
-
-" Ack for the last search.
-nnoremap <silent> <leader>? :execute "Ack! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR>
 
 """ Utility """
 
@@ -290,7 +296,7 @@ nnoremap <Leader>d :bd<CR>
 cnoremap %% %:p:h
 
 " close the quickfix window
-nnoremap <Leader>cc :cclose<CR>
+nnoremap <Leader>cl :cclose<CR>
 
 " location list stuff
 nnoremap <Leader>ll :ll<CR>
