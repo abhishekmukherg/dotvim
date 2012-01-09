@@ -55,8 +55,9 @@ Bundle 'scrooloose/nerdcommenter'
 " Code completion
 Bundle 'Raimondi/delimitMate'
 Bundle 'docunext/closetag.vim'
-Bundle 'msanders/snipmate.vim'
-Bundle 'scrooloose/snipmate-snippets'
+" Bundle 'msanders/snipmate.vim'
+" Bundle 'scrooloose/snipmate-snippets'
+Bundle 'vim-scripts/UltiSnips'
 Bundle 'mattn/zencoding-vim'
 
 " Source Control
@@ -147,6 +148,11 @@ nnoremap <Leader>ft :FufTaggedFile<CR>
 " always show status bar
 set laststatus=2
 
+" ultisnips                                 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
 " -----------------------------------------------------------------------------
 " General setup
 " -----------------------------------------------------------------------------
@@ -224,22 +230,8 @@ vnoremap / /\v
 nnoremap ' `
 nnoremap ` '
 
-" after using '.', go to the character we were before 
-" http://vim.wikia.com/wiki/VimTip1142
-function! ResDot(count)
-    execute "normal!" count . "."
-    if line("'[") <= line("$")
-        normal! g`[
-    endif
-endfunction
-
-nnoremap <silent> . :<C-U>call ResDot(v:count1)<CR>
-
 " Quickfix window with last search
 nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
-
-" Ack for the last search.
-nnoremap <silent> <leader>? :execute "Ack! '" . substitute(substitute(substitute(@/, "\\\\<", "\\\\b", ""), "\\\\>", "\\\\b", ""), "\\\\v", "", "") . "'"<CR>
 
 """ Utility """
 
