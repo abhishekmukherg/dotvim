@@ -212,6 +212,7 @@ set showcmd                              " show (partial) command in the last li
                                          " this also shows visual selection info
 set nomodeline                           " disable mode lines (security measure)
 set cursorline                           " underline the current line, for quick orientation
+set cursorcolumn
 
 """ Search and Movement """
 
@@ -302,6 +303,10 @@ nnoremap <Leader>cl :cclose<CR>
 nnoremap <Leader>ll :ll<CR>
 nnoremap <Leader>j :lne<CR>
 nnoremap <Leader>k :lpre<CR>
+
+" navigate tabs
+nnoremap <Leader>tn :tabnext<CR>
+nnoremap <Leader>tp :tabpre<CR>
 
 " -----------------------------------------------------------------------------
 " Auto/omni complete settings
