@@ -41,7 +41,9 @@ Bundle 'mileszs/ack.vim'
 Bundle 'tsaleh/vim-align'
 Bundle 'wincent/Command-T'
 Bundle 'vim-scripts/FuzzyFinder'
-Bundle 'Lokaltog/vim-easymotion'
+Bundle 'kien/ctrlp.vim'
+" don't use this
+" Bundle 'Lokaltog/vim-easymotion'
 
 " Manipulation
 Bundle 'michaeljsmith/vim-indent-object'
@@ -52,8 +54,6 @@ Bundle 'scrooloose/nerdcommenter'
 " Code completion
 Bundle 'Raimondi/delimitMate'
 Bundle 'docunext/closetag.vim'
-" Bundle 'msanders/snipmate.vim'
-" Bundle 'scrooloose/snipmate-snippets'
 Bundle 'vim-scripts/UltiSnips'
 Bundle 'mattn/zencoding-vim'
 
@@ -64,7 +64,8 @@ Bundle 'gregsexton/gitv'
 
 " Window/buffer/tab manipulation
 Bundle 'vim-scripts/ZoomWin'
-Bundle 'mutewinter/LustyJuggler'
+" LJ seems cool, but never use it
+" Bundle 'mutewinter/LustyJuggler'
 " also use 'mpage' but it doesnt have a repo,
 " included manually
 set rtp+=~/.vim/bundle/mpage/*
@@ -133,13 +134,16 @@ nnoremap <Leader>tg :TagbarToggle<CR>
 nnoremap <Leader>ct :silent! ctags -R --extra=+f
 
 " command-t
-let g:CommandTMaxFiles=20000
+" let g:CommandTMaxFiles=20000
 let g:CommandTMaxHeight=15
 
 " fuzzy funder
 nnoremap <Leader>ff :FufFileWithCurrentBufferDir<CR>
 nnoremap <Leader>fb :FufBuffer<CR>
 nnoremap <Leader>ft :FufTaggedFile<CR>
+
+" ctrl p
+nnoremap <Leader>pb :CtrlPBuffer<CR>
 
 " status line
 " always show status bar
@@ -325,6 +329,9 @@ autocmd FileType vim setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " 2 spaces for tab in html
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+" Set velocity syntax (redundant but necessary)
+autocmd BufRead,BufNewFile *.vm  setfiletype velocity
 
 " -----------------------------------------------------------------------------
 " Custom magic goes here
