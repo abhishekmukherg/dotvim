@@ -321,6 +321,9 @@ autocmd Filetype java setlocal omnifunc=javacomplete#Complete
 " 2 spaces for tab in vim script
 autocmd FileType vim setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
+" 2 spaces for tab in html
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
 " -----------------------------------------------------------------------------
 " Custom magic goes here
 " -----------------------------------------------------------------------------
