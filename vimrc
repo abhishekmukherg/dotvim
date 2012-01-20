@@ -35,9 +35,6 @@ Bundle 'vim-scripts/L9'
 Bundle 'wycats/nerdtree'
 Bundle 'majutsushi/tagbar'
 Bundle 'dickeytk/status.vim'
-" Bundle 'Lokaltog/vim-powerline'
-" Bundle 'molok/vim-smartusline'
-Bundle 'nathanaelkane/vim-indent-guides'
 
 " Utilities
 Bundle 'mileszs/ack.vim'
@@ -196,11 +193,11 @@ set encoding=utf-8
 set history=1000                         " remember more commands and search history
 set undolevels=1000                      " use many muchos levels of undo
 
-if v:version >= 730
-  set undofile                           " keep a persistent backup file
-  set undodir=~/.vim/.undo,~/tmp,/tmp
-endif
+set undofile                             " keep a persistent backup file
+set undodir=~/.vim/.undo,~/tmp,/tmp
 
+set nobackup                             " the backup feature is annoying, use source control
+                                         "   but if you must...
 set directory=~/.vim/.swap,~/tmp,/tmp    " store swap files in one of these directories
 set backupdir=~/.vim/.backup,~/tmp,/tmp  " store swap files in one of these directories
 
@@ -215,6 +212,7 @@ set showcmd                              " show (partial) command in the last li
                                          " this also shows visual selection info
 set nomodeline                           " disable mode lines (security measure)
 set cursorline                           " underline the current line, for quick orientation
+set cursorcolumn
 
 """ Search and Movement """
 
@@ -305,6 +303,10 @@ nnoremap <Leader>cl :cclose<CR>
 nnoremap <Leader>ll :ll<CR>
 nnoremap <Leader>j :lne<CR>
 nnoremap <Leader>k :lpre<CR>
+
+" navigate tabs
+nnoremap <Leader>tn :tabnext<CR>
+nnoremap <Leader>tp :tabpre<CR>
 
 " -----------------------------------------------------------------------------
 " Auto/omni complete settings
