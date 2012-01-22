@@ -127,17 +127,10 @@ nnoremap <Leader>z :ZoomWin<CR>
 nnoremap <Leader>a :Ack<Space>
 nnoremap <Leader>la :LAck<Space>
 
-" toggle MiniBufExplorer
-nnoremap <Leader>m :TMiniBufExplorer<CR>
-
 " toggle tagbar
 nnoremap <Leader>tg :TagbarToggle<CR>
 " generate ctags
 nnoremap <Leader>ct :silent! ctags -R --extra=+f
-
-" command-t
-" let g:CommandTMaxFiles=20000
-let g:CommandTMaxHeight=15
 
 " fuzzy funder
 nnoremap <Leader>ff :FufFileWithCurrentBufferDir<CR>
@@ -146,6 +139,7 @@ nnoremap <Leader>ft :FufTaggedFile<CR>
 
 " ctrl p
 nnoremap <Leader>pb :CtrlPBuffer<CR>
+nnoremap <Leader>b :CtrlPBuffer<CR>
 
 " status line
 " always show status bar
