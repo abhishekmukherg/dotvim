@@ -80,6 +80,7 @@ Bundle 'tomasr/molokai'
 Bundle 'therubymug/vim-pyte'
 Bundle 'vim-scripts/vydark'
 Bundle 'Cleanroom'
+Bundle 'vexxor/zenburn.vim'
 
 " Syntax
 Bundle 'scrooloose/syntastic'
@@ -154,6 +155,10 @@ set laststatus=2
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" nerd tree toggle
+nnoremap <Leader>nt :NERDTreeToggle<CR>
+nnoremap <Leader>nf :NERDTreeFind<CR>
 
 " -----------------------------------------------------------------------------
 " General setup
@@ -268,6 +273,9 @@ endif
 " -----------------------------------------------------------------------------
 " General Shortcuts and mappings
 " -----------------------------------------------------------------------------
+
+" reload vimrc
+nnoremap <Leader>sv :source $MYVIMRC<CR>
 
 " close other buffers
 nnoremap <Leader>o :on<CR>
