@@ -314,6 +314,8 @@ nnoremap <Leader>k :lpre<CR>
 " navigate tabs
 nnoremap <Leader>tn :tabnext<CR>
 nnoremap <Leader>tp :tabpre<CR>
+nnoremap <Leader>tc :tabnew<CR>
+nnoremap <Leader>td :tabclose<CR>
 
 " -----------------------------------------------------------------------------
 " Auto/omni complete settings
