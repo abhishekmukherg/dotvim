@@ -39,7 +39,7 @@ Bundle 'dickeytk/status.vim'
 " Utilities
 Bundle 'mileszs/ack.vim'
 Bundle 'tsaleh/vim-align'
-Bundle 'wincent/Command-T'
+" Bundle 'wincent/Command-T'
 Bundle 'vim-scripts/FuzzyFinder'
 Bundle 'kien/ctrlp.vim'
 " don't use this
@@ -97,14 +97,15 @@ Bundle 'klen/python-mode'
 Bundle 'javacomplete'
 
 " Css
-Bundle 'skammer/vim-css-color'
-Bundle 'vim-scripts/Better-CSS-Syntax-for-Vim'
+"" these are really cool, but they slow down vim ALOT
+" Bundle 'skammer/vim-css-color'
+" Bundle 'vim-scripts/Better-CSS-Syntax-for-Vim'
 
 " Velocity
 Bundle 'velocity.vim'
 
 " Lisp
-Bundle 'vim-scripts/slimv.vim'
+" Bundle 'vim-scripts/slimv.vim'
 
 " -----------------------------------------------------------------------------
 " Plugin Setup / Shortcuts / Maps
