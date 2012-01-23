@@ -10,19 +10,19 @@ all : deps dirs vundle bundles
 deps : ack ctags xautomation pep8
 
 ack : /usr/bin/ack
-	hash -v ack-grep &> /dev/null || sudo apt-get install ack-grep
+	hash ack-grep &> /dev/null || sudo apt-get install ack-grep
 
 /usr/bin/ack :
 	sudo ln -sib /usr/bin/ack-grep /usr/bin/ack
 
 ctags : 
-	hash -v ctags &> /dev/null || sudo apt-get install exuberant-ctags
+	hash ctags &> /dev/null || sudo apt-get install exuberant-ctags
 
 xautomation : 
-	hash -v xte &> /dev/null || sudo apt-get install xautomation
+	hash xte &> /dev/null || sudo apt-get install xautomation
 
 pep8 : 
-	hash -v pep8 &> /dev/null || sudo apt-get install pep8
+	hash pep8 &> /dev/null || sudo apt-get install pep8
 
 # directories to create -------------------------------------------------------
 dirs : swap backup undo
