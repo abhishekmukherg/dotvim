@@ -11,10 +11,8 @@ deps : /usr/bin/ack ctags xautomation pep8
 	@echo "Installing dependencies"
 
 ack :
-	hash ack-grep &> /dev/null || sudo apt-get install ack-grep
-
-/usr/bin/ack : ack
-	sudo ln -sib /usr/bin/ack-grep /usr/bin/ack
+	hash ack-grep &> /dev/null || sudo apt-get install ack-grep \
+		&& sudo ln -sib /usr/bin/ack-grep /usr/bin/ack
 
 ctags : 
 	hash ctags &> /dev/null || sudo apt-get install exuberant-ctags
@@ -26,16 +24,10 @@ pep8 :
 	hash pep8 &> /dev/null || sudo apt-get install pep8
 
 # directories to create -------------------------------------------------------
-dirs : swap backup undo
+dirs :
 	@echo "Creating vim directories .swap, .backup, .undo"
-
-swap : 
 	[ -d .swap ] || mkdir .swap
-
-backup : 
 	[ -d .backup ] || mkdir .backup
-
-undo : 
 	[ -d .undo ] || mkdir .undo
 
 # vundle ----------------------------------------------------------------------
@@ -51,14 +43,15 @@ bundles :
 # install ---------------------------------------------------------------------
 
 BACKUPDIR := $(shell mktemp -d)
+PWD := $(shell pwd)
 
 install : backup
 	@echo "Linking dir to ~/.vim and vimrc to ~/.vimrc"
-	ln -s . "$(HOME)/.vim"
+	ln -s "$(PWD)" "$(HOME)/.vim"
 	ln -s vimrc "$(HOME)/.vimrc"
 
 backup :
 	@echo "Backing up existing .vim/, .vimrc, .gvimrc to " $(BACKUPDIR)
-	[ ! -d "$(HOME)/.vim" ] || cp -R "$(HOME)/.vim" $(BACKUPDIR)
-	[ ! -f "$(HOME)/.vimrc"] || cp "$(HOME)/.vimrc" $(BACKUPDIR)
-	[ ! -f "$(HOME)/.gvimrc"] || cp "$(HOME)/.gvimrc" $(BACKUPDIR)
+	[ ! -d "$(HOME)/.vim" ] || mv "$(HOME)/.vim" $(BACKUPDIR)
+	[ ! -f "$(HOME)/.vimrc" ] || mv "$(HOME)/.vimrc" $(BACKUPDIR)
+	[ ! -f "$(HOME)/.gvimrc" ] || mv "$(HOME)/.gvimrc" $(BACKUPDIR)
