@@ -68,5 +68,8 @@ gitignore_update :
 		&& echo ".backup" >> .gitignore \
 		&& echo ".undo" >> .gitignore
 
+# remove old bundles  ----------------------------------------------------------
+remove_unused_plugins :
+	python scripts/remove_old_plugins.py
 	
 
