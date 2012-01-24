@@ -48,10 +48,25 @@ PWD := $(shell pwd)
 install : backup
 	@echo "Linking dir to ~/.vim and vimrc to ~/.vimrc"
 	ln -s "$(PWD)" "$(HOME)/.vim"
-	ln -s vimrc "$(HOME)/.vimrc"
+	ln -s "$(PWD)/vimrc" "$(HOME)/.vimrc"
 
 backup :
 	@echo "Backing up existing .vim/, .vimrc, .gvimrc to " $(BACKUPDIR)
 	[ ! -d "$(HOME)/.vim" ] || mv "$(HOME)/.vim" $(BACKUPDIR)
 	[ ! -f "$(HOME)/.vimrc" ] || mv "$(HOME)/.vimrc" $(BACKUPDIR)
 	[ ! -f "$(HOME)/.gvimrc" ] || mv "$(HOME)/.gvimrc" $(BACKUPDIR)
+
+# gitignore --------------------------------------------------------------------
+GITIGNORE_BACKUP := $(shell mktemp)
+gitignore : gitignore_update
+	cat .gitignore | sort | uniq > $(GITIGNORE_BACKUP) \
+		&& mv $(GITIGNORE_BACKUP) .gitignore
+
+gitignore_update :
+	git status | grep "bundle/" | grep -v "modified:" | awk '{print $$2}' >> .gitignore \
+		&& echo ".swap" >> .gitignore \
+		&& echo ".backup" >> .gitignore \
+		&& echo ".undo" >> .gitignore
+
+	
+
